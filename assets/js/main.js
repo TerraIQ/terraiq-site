@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const t=document.querySelector('.nav-toggle'),n=document.getElementById('primary-nav');t&&t.addEventListener('click',()=>{const e='true'===t.getAttribute('aria-expanded');t.setAttribute('aria-expanded',String(!e)),n&&n.classList.toggle('open')});const y=document.getElementById('year');y&&(y.textContent=(new Date).getFullYear())});
