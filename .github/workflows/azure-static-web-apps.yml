@@ -23,9 +23,9 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: 'upload'
-          app_location: '/'            # root of the repo
+          app_location: ''            # root of the repo
           api_location: ''             # no API for now
-          output_location: '/'         # output folder for static files
+          output_location: ''         # output folder for static files
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
