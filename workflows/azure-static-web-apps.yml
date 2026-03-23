@@ -13,15 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build And Deploy
+     - name: Build And Deploy
   uses: Azure/static-web-apps-deploy@v1
   with:
     azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
     repo_token: ${{ secrets.GITHUB_TOKEN }}
     action: "upload"
 
-    # --- Make the paths explicit for a static site in repo root ---
+    # ---- explicit settings for static files in repo root ----
     app_location: "."          # repo root (where index.html lives)
-    output_location: "."       # tell the action that artifacts live in the same root
+    output_location: "."       # treat repo root as the artifact/content folder
     api_location: ""           # no API
-    skip_app_build: "true"     # force deploy-as-is (quote it so the input is read)
+    skip_app_build: "true"     # deploy-as-is; disable Oryx build/detection
+    production_branch: "main"  # ensure it matches your default branch
